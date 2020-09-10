@@ -184,6 +184,8 @@ $(function(){
       console.log('address '+ address.length);
       console.log('mobile number '+ document.getElementById('mobile_number').value.length);
       console.log('dob '+ document.getElementById('dob').value);
+      
+      
 
       if(document.getElementById('email').value == ''){
         document.getElementById('religion').focus();
@@ -299,9 +301,10 @@ $(function(){
         document.getElementById('e_age').style.color = 'red';
         flag = 1;
       }
-      else if(document.getElementById('age').value < 15 || document.getElementById('age').value >= 60){
-        document.getElementById('e_age').innerHTML = "**Not within proper age limit"; 
+      else if(document.getElementById('age').value < 15 || document.getElementById('age').value >60){
+        document.getElementById('e_age').innerHTML = "**Not within proper age limit (15-60)"; 
           document.getElementById('e_age').style.color = 'red';
+          document.getElementById('dob').focus();
         flag = 1;
 
       }else
