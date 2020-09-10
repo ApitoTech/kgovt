@@ -866,18 +866,14 @@ function ageCal(){
 	  var dob = parseInt(document.getElementById('dob').value.substring(0,4));
 	  var today = new Date();
 	  
+	  var age = today.getFullYear() - dob;
 	  
-	  
-	  if((today.getFullYear() - dob ) < 0 || (today.getFullYear() - dob ) > 60){
-        
-        	document.getElementById('dob').value='';
-        	document.getElementById('dob').focus();
-        	document.getElementById('e_dob').value='enter a valid date';
-        	return; 
-        }
+	 
 	  
 	  document.getElementById('age').value = today.getFullYear() - dob;
-	}
+	  
+	  
+	}  
 
 function Service(){
 

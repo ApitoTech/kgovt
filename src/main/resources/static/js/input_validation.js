@@ -1,4 +1,7 @@
 
+$('#dob').inputmask('Regex', { 
+	regex: "^[0-3][0-9][0-1][0-9][0-2][6|7|8|9|0|1|2][0-9]$"
+});
 
 $('#mobile_number').inputmask('Regex', { 
 	regex: "^[1-9][0-9]{9}|[+][9][1][1-9][0-9]{9}$"
@@ -76,13 +79,13 @@ $('#puc_institution').inputmask('Regex', {
 
 });
 $('#puc_totalmarks').inputmask('Regex', { 
-    regex: "^[1-9][0-9][0-9]$"
+    regex: "^[1-9][0-9][0-9][0-9]$"
 
 });
 
 
 $('#puc_marks').inputmask('Regex', { 
-    regex: "^[1-9][0-9][0-9]$"
+    regex: "^[1-9][0-9][0-9][0-9]$"
 
 });
 $('#puc_pass').inputmask('Regex', { 
