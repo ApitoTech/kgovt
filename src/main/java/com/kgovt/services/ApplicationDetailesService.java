@@ -198,6 +198,7 @@ public class ApplicationDetailesService extends AppConstants {
 						transfer.put("notes", notes);
 						transfer.put("on_hold", 0);
 						branchTransfers.put(transfer);
+						orderRequest.put("transfers", branchTransfers);
 						List<RazorPayObject> list = razorPayService.listRazorDetails();
 						
 						paymentDetails.setDescription(list.get(0).getRazorDescription());
@@ -262,6 +263,8 @@ public class ApplicationDetailesService extends AppConstants {
 						transfer.put("notes", notes);
 						transfer.put("on_hold", 0);
 						branchTransfers.put(transfer);
+						
+						orderRequest.put("transfers", branchTransfers);
 						List<RazorPayObject> list = razorPayService.listRazorDetails();
 						
 						paymentDetails.setDescription(list.get(0).getRazorDescription());
