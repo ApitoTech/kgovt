@@ -151,73 +151,90 @@
 									th:text="${applicationDetailes.sslcPercentage}"></span>
 							</div>
 							<div class="form-group">
-								<label>Upload MarksCard/Certificate: </label> <span
-									id="e_sslc_certificate"></span>
+								<label>Upload MarksCard/Certificate: </label>
+									<a th:href="@{|/admin/download?photoFile=${applicationDetailes.sslcFileName}|}">Download</a>
+								 <span id="e_sslc_certificate"></span>
 							</div>
 							<div class="form-group">
 								<h3>PUC or Diploma/ಪಿಯು ಅಥವಾ ಡಿಪ್ಲೊಮಾ</h3>
 							</div>
 							<div class="form-group">
 								<label>Name of Institution/ Board/ University:</label>
+								<span 
+									th:text="${applicationDetailes.pucInstitution}"></span>
 							</div>
 							<div class="form-group">
 								<label>Passing Year</label>
+								<span 
+									th:text="${applicationDetailes.pucPassingYearMonth}"></span>
 							</div>
 							<div class="form-group">
 								<label>Total Marks: </label>
-
-								<!-- <label>(Obtained/Total): </label> -->
+								<span 
+									th:text="${applicationDetailes.pucTotalMarks}"></span>
 							</div>
 							<div class="form-group">
 								<label>Percentage(%) of Marks: </label>
+								<span 
+									th:text="${applicationDetailes.pucPercentage}"></span>
 							</div>
 							<div class="form-group">
-								<label>MarksCard/Certificate: </label> <span
-									id="e_puc_certificate"
-									th:text="${applicationDetailes.nationality}"></span>
+								<label>MarksCard/Certificate: </label> 
+								<a th:href="@{|/admin/download?photoFile=${applicationDetailes.pucFileName}|}">Download</a>
 							</div>
 							<div class="form-group">
 								<h3>Under Graduation/ಪದವಿ:</h3>
 							</div>
 							<div class="form-group">
 								<label>Name of Institution/ Board/ University:</label>
+								<span 
+									th:text="${applicationDetailes.ugInstitution}"></span>
 							</div>
 							<div class="form-group">
 								<label>Passing Year: </label>
+								<span 
+									th:text="${applicationDetailes.ugPassingYearMonth}"></span>
 							</div>
 							<div class="form-group">
 								<label>Total Marks:</label>
-
-
+								<span 
+									th:text="${applicationDetailes.ugTotalMarks}"></span>
 							</div>
 							<div class="form-group">
 								<label>Percentage(%) of Marks:</label>
+								<span 
+									th:text="${applicationDetailes.ugPercentage}"></span>
 							</div>
 							<div class="form-group">
-								<label>MarksCard/Certificate:</label> <span
-									id="e_ug_certificate"></span>
+								<label>MarksCard/Certificate:</label>
+								<a th:href="@{|/admin/download?photoFile=${applicationDetailes.ugFileName}|}">Download</a>
 							</div>
 							<div class="form-group">
 								<h3>Post Graduation/ಸ್ನಾತಕೋತ್ತರ ಪದವಿ</h3>
 							</div>
 							<div class="form-group">
 								<label>Name of Institution/ Board/ University:</label>
+								<span 
+									th:text="${applicationDetailes.pgInstitution}"></span>
 							</div>
 							<div class="form-group">
 								<label>Passing Year:</label>
-
+								<span 
+									th:text="${applicationDetailes.pgPassingYearMonth}"></span>
 							</div>
 							<div class="form-group">
 								<label>Total Marks:</label>
-
-
+								<span 
+									th:text="${applicationDetailes.pgTotalMarks}"></span>
 							</div>
 							<div class="form-group">
 								<label>Percentage(%) of Marks:</label>
+								<span 
+									th:text="${applicationDetailes.pgPercentage}"></span>
 							</div>
 							<div class="form-group">
-								<label>MarksCard/Certificate:</label> <span
-									id="e_pg_certificate"></span>
+								<label>MarksCard/Certificate:</label> 
+								<a th:href="@{|/admin/download?photoFile=${applicationDetailes.pgFileName}|}">Download</a>
 							</div>
 							<div class="form-group">
 								<label>Name of Deputy Society/ಡೆಪ್ಯೂಟಿ ಸೊಸೈಟಿಯ ಹೆಸರ: </label> <span
@@ -398,6 +415,10 @@
      	let adminId = "1";
      	let applicantNo = [[${applicationDetailes.applicantNumber}]]
      	let comment = $('#comments').val();
+     	if(comment.length < 1){
+     		alert('Comment is Mandatory');
+     		return;
+     	}
      	$.ajax({
 				type : 'POST',
 				url : "/admin/acceptViewData?adminId="+adminId+"&applicantNo="+applicantNo+"&status="+type+"&comment="+comment,

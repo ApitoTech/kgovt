@@ -143,6 +143,7 @@ public class AppicationController extends AppConstants {
 			@RequestParam("nocFile") MultipartFile nocFile,
 			@RequestParam("signatureFile") MultipartFile signatureFile) {
 		try {
+			
 			applicationDetailes = appicationService.saveApplicationAction(applicationDetailes, sslcFile, pucFile,
 					ugFile, pgFile, photoFile, addressFile, certificateFile, nocFile, signatureFile);
 			if (null == applicationDetailes) {

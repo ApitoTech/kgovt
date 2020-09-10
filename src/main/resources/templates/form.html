@@ -79,10 +79,10 @@
 												<option value="Dharwad">Dharwad</option>
 												<option value="Madikeri">Madikeri</option>
 												<option value="Mysuru">Mysuru</option>
-												<option value="Kalaburgi">Kalaburgi</option>
+												<option value="Kalaburagi">Kalaburagi</option>
 												<option value="Bengaluru">Bengaluru</option>
-												<option value="Shivamogga">Shivamogga</option>
-												<option value="Moodbidri">Moodbidri</option>
+												<option value="Shimoga">Shimoga</option>
+												<option value="Moodabidri">Moodabidri</option>
 												<option value="Belagavi">Belagavi</option>
 											</select> <span id="e_poc"></span>
 										</div>
@@ -147,7 +147,7 @@
 										<div class="form-group">
 											<label>Nationality/ರಾಷ್ಟ್ರೀಯತೆ * </label> <input type="text"
 												id="nationality" name="nationality" class="form-control"
-												placeholder="Nationality/ರಾಷ್ಟ್ರೀಯತೆ"> <span
+												placeholder="Nationality/ರಾಷ್ಟ್ರೀಯತೆ" maxlength="20" value="Indian"> <span
 												id="e_nationality"></span>
 										</div>
 										<div class="form-group">
@@ -420,10 +420,12 @@
 											here by declare that all the above documents and information
 											provided are true</label>
 									</div>
-									<button type="button" id="changetabbutton9"
+										<button type="button" id="changetabbutton9"
 										class="btn btn-success ">Prev</button>
 									<button type="submit" id="changetabbutton5"
-										class="btn btn-primary ">Save</button>
+										style="display: none" class="btn btn-primary ">Save</button>
+									<button type="text" class="btn btn-primary"
+										onclick="return validatebutton()" >Save</button>
 								</div>
 
 							</div>
@@ -454,7 +456,16 @@
 <script th:src="@{/js/yearpicker.js}" crossorigin="anonymous"></script>
 <script th:src="@{/js/supporters.js}" crossorigin="anonymous"></script>
 	<script type="text/javascript">
-		
+	function validatebutton(){
+		let v= $('#declare').is(":checked");
+		if(v){
+			$('#changetabbutton5').click();
+		}else{
+			alert('Please Accept Declaration');
+			return false;
+		}
+	}
+	
 		function validateMobile() {
 			let mobileNo = $('#mobile_number').val();
 			if (mobileNo) {

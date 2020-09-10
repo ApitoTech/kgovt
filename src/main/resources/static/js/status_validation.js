@@ -64,6 +64,18 @@ $(function() {
 //							document.getElementById('e_password').innerHTML = "";
 //							flag = 1;
 //						}
+						if (document.getElementById('passStatus').value == '') {
+							document.getElementById('passStatus')
+									.focus();
+
+							document.getElementById('e_password_status').innerHTML = "**Enter Password";
+							document.getElementById('e_password_status').style.color = 'red';
+
+							flag = 1;
+						}else {
+							document.getElementById('e_password_status').innerHTML = "";
+							flag = 1;
+						}
 						if (flag == 0) {
 							console.log(document.getElementById('stat'));
 						}
