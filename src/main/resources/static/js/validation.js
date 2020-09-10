@@ -512,12 +512,7 @@ $(function(){
 
         var date = new Date();
         
-        if((date.getFullYear() - year_entered ) < 0 || (date.getFullYear() - year_entered ) > 60){
         
-        	document.getElementById('doa').value='';
-        	document.getElementById('doa').focus();
-        	return; 
-        }
         
         if (month_entered > (date.getMonth() + 1)){
 
@@ -543,6 +538,8 @@ $(function(){
       var phone_number_office = document.getElementById('phone_number_office').value;
       var pincode_office = document.getElementById('pincode_office').value;
       var flag = 0;
+      
+       var year_entered = parseInt(period_of_service);
 
       if(deputy == ''){
         document.getElementById('deputy_scoiety').focus();
@@ -598,6 +595,13 @@ $(function(){
         
         
         flag = 1;
+      } else if( year_entered < 0 || year_entered > 60){
+      	document.getElementById('doa').focus();
+
+        document.getElementById('e_period_of_service').innerHTML = "Enter Valid Period of service(0-60yrs)";
+        document.getElementById('e_period_of_service').style.color = 'red';
+        flag = 1;
+      
       }
       else{
         document.getElementById('e_period_of_service').innerHTML = "";
