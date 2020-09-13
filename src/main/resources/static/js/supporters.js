@@ -4,8 +4,9 @@ headerhtml += '<span id="waringId"></span>';
 headerhtml +=' <div class="row">';
 headerhtml += '  <div class="col-md-12  headerDiv">';
 headerhtml += '   <img src="/img/logo1.jpg">';
-headerhtml += '  <div class="d-none d-sm-none d-md-block"> <p class="font-weight-normal" style="font-size:8ch; text-align:center;"> Karnataka State co-operative Federation Ltd.,</p></div>';
+headerhtml += '  <div class="d-none d-sm-none d-md-block"> <p class="font-weight-normal" style="font-size:7ch; text-align:center;"> Karnataka State Co-operative Federation Ltd Bangalore.,</p></div>';
 headerhtml += '   <p style="text-align:center; font-size: 3ch; color: rgb(121, 171, 236);"> Diploma in Co-operative Management (Distance Education)</p>';
+headerhtml += '    <marquee behavior="alternate" scrollamount="8"> <h4 style=" color: red;">The link to apply online for distance education dcm 2020-2021 will be activated post 14th of September.</h4></marquee>';
 headerhtml += '   </div>';
 headerhtml += ' </div>';
 
@@ -19,9 +20,9 @@ headerhtml += '			<div class="collapse navbar-collapse" id="navbarNav">';
 headerhtml += '				<ul class="navbar-nav">';
 headerhtml += '					<li class="nav-item"><a class="nav-link" href="/">Home';
 headerhtml += '							Page</a></li>';
-headerhtml += '					<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modalAbandonedCart" href="/new">Apply';
-headerhtml += '							Online</a></li>';
-headerhtml += '					<li class="nav-item"><a class="nav-link" href="/status">Status</a></li>';
+//headerhtml += '					<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modalAbandonedCart" href="/new">Apply';
+//headerhtml += '							Online</a></li>';
+//headerhtml += '					<li class="nav-item"><a class="nav-link" href="/status">Status</a></li>';
 headerhtml += '					<li class="nav-item"><a class="nav-link" href="/contact">Contact';
 headerhtml += '							Us</a></li>';
 headerhtml += '				</ul>';
@@ -38,7 +39,7 @@ footerhtml += '        <div>Designed and Deveploed By: www.apito.in&nbsp&nbsp</d
 footerhtml += '    </div>';
 footerhtml += '</div>';
 
-let righthtml= '<ul><li>Phone no: +91 8892075276,+91 8660193339</li><li style="word-break: break-all">E-mail: apitotechnologies@gmail.com</li></ul>';
+let righthtml= '<ul><li><b>Phone no:</b> <br/><a href="/contact">Institutions Contact</a><br/>kscf contact : <br>+91 8660193339<br/></li><li style="word-break: break-all"><b>E-mail:</b> <br/> apitotechnologies@gmail.com</li></ul>';
 
 let lefthtml= '';
 lefthtml += '<ul>';

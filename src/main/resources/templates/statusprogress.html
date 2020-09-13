@@ -57,7 +57,7 @@
 
 							<li class="li inactive " id="approval">
 								<div class="timestamp">
-									<p>Application Validation</p>
+									<p>Application Verification</p>
 								</div>
 								<div class="status">
 									<span id="stage3">Pending</span>
@@ -144,6 +144,7 @@
 	<script th:src="@{/js/checkout.js}" crossorigin="anonymous"></script>
 	<script th:src="@{/js/input_validation.js}" crossorigin="anonymous"></script>
 	<script th:src="@{/js/status_validation.js}" crossorigin="anonymous"></script>
+	
 	<script th:src="@{/js/supporters.js}" crossorigin="anonymous"></script>
 	<script th:src="@{/js/validation.js}" crossorigin="anonymous"></script>
 	<script th:inline="javascript">
@@ -181,6 +182,16 @@
 
 
 <script type="text/javascript">
+if ('serviceWorker' in navigator) {
+	  navigator.serviceWorker.getRegistrations().then(function (registrations) {
+	    //returns installed service workers
+	    if (registrations.length) {
+	      for(let registration of registrations) {
+	        registration.unregister();
+	      }
+	    }
+	  });
+	}
     function triggerPayment1() {
     	successDialog('0','1', function(){
   		});
@@ -249,7 +260,7 @@
     	    "amount":paymentDetails.amount, // Example: 2000 paise = INR 20
     	    "name" : paymentDetails.preOfCenter,
     	    "description" : paymentDetails.description,
-    	    "image" : "/img/download.png",
+    	    "image" : "/img/logo1.jpg",
     	    "order_id" : paymentDetails.orderId,
 			"callback_url" : clbackUrl,
 			"redirect" : true,
@@ -301,7 +312,7 @@
     	    "amount":paymentDetails.amount, // Example: 2000 paise = INR 20
     	    "name" : paymentDetails.preOfCenter,
     	    "description" : paymentDetails.description,
-    	    "image" : "/img/download.png",
+    	    "image" : "/img/logo1.jpg",
     	    "order_id" : paymentDetails.orderId,
 			"callback_url" : clbackUrl,
 			"redirect" : true,

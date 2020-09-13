@@ -63,7 +63,7 @@ public class PaymentDetails2Service extends AppConstants{
 			newStatus.setStatus("C");
 			statusService.saveStatus(newStatus);
 			
-			applicationDetailes.setPaymentTwo("Yes");
+			applicationDetailes.setPaymentTwo("Paid");
 			appicationService.saveApplicationDetailes(applicationDetailes);
 		} catch (Exception e) {
 			log.error("Error :::: Proceed second Payment::: ", e);

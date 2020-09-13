@@ -207,9 +207,11 @@ public class ApplicationDetailesService extends AppConstants {
 						RazorpayClient razorpay = new RazorpayClient(list.get(0).getAccKey(), list.get(0).getAccSecret());
 						com.razorpay.Order order = razorpay.Orders.create(orderRequest);
 						JSONObject jsonObj = new JSONObject(order.toString());
+						log.error("Json received "+order.toString());
 						paymentDetails.setOrderId(jsonObj.getString("id"));
 						return paymentDetails;
 					} catch (RazorpayException e) {
+						e.printStackTrace();
 						log.error("Error :::: Proceed First Payment::: ", e.getMessage());
 						return null;
 					}
@@ -273,9 +275,11 @@ public class ApplicationDetailesService extends AppConstants {
 						RazorpayClient razorpay = new RazorpayClient(list.get(0).getAccKey(), list.get(0).getAccSecret());
 						com.razorpay.Order order = razorpay.Orders.create(orderRequest);
 						JSONObject jsonObj = new JSONObject(order.toString());
+						log.error("Json received "+order.toString());
 						paymentDetails.setOrderId(jsonObj.getString("id"));
 						return paymentDetails;
 					} catch (RazorpayException e) {
+						e.printStackTrace();
 						log.error("Error :::: Proceed Second Payment::: ", e.getMessage());
 						return null;
 					}

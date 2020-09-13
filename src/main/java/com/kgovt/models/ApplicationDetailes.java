@@ -204,7 +204,7 @@ public class ApplicationDetailes implements Serializable, Cloneable {
 	private String signatureFilePath;
 	
 	@Column(name = "payment_two")
-	private String paymentTwo = "No"; 
+	private String paymentTwo = "Not Paid"; 
 	
 	@Transient
 	private MultipartFile sslcFile;

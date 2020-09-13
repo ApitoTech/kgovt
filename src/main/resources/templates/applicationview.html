@@ -152,7 +152,7 @@
 							</div>
 							<div class="form-group">
 								<label>Upload MarksCard/Certificate: </label>
-									<a th:href="@{|/admin/download?photoFile=${applicationDetailes.sslcFileName}|}">Download</a>
+									<a th:if="${applicationDetailes.sslcFileName != null}" th:href="@{|/admin/download?photoFile=${applicationDetailes.sslcFileName}|}">Download</a>
 								 <span id="e_sslc_certificate"></span>
 							</div>
 							<div class="form-group">
@@ -180,7 +180,7 @@
 							</div>
 							<div class="form-group">
 								<label>MarksCard/Certificate: </label> 
-								<a th:href="@{|/admin/download?photoFile=${applicationDetailes.pucFileName}|}">Download</a>
+								<a th:if="${applicationDetailes.pucFileName != null}" th:href="@{|/admin/download?photoFile=${applicationDetailes.pucFileName}|}">Download</a>
 							</div>
 							<div class="form-group">
 								<h3>Under Graduation/ಪದವಿ:</h3>
@@ -207,7 +207,7 @@
 							</div>
 							<div class="form-group">
 								<label>MarksCard/Certificate:</label>
-								<a th:href="@{|/admin/download?photoFile=${applicationDetailes.ugFileName}|}">Download</a>
+								<a th:if="${applicationDetailes.ugFileName != null}" th:href="@{|/admin/download?photoFile=${applicationDetailes.ugFileName}|}">Download</a>
 							</div>
 							<div class="form-group">
 								<h3>Post Graduation/ಸ್ನಾತಕೋತ್ತರ ಪದವಿ</h3>
@@ -234,7 +234,7 @@
 							</div>
 							<div class="form-group">
 								<label>MarksCard/Certificate:</label> 
-								<a th:href="@{|/admin/download?photoFile=${applicationDetailes.pgFileName}|}">Download</a>
+								<a th:if="${applicationDetailes.pgFileName != null}" th:href="@{|/admin/download?photoFile=${applicationDetailes.pgFileName}|}">Download</a>
 							</div>
 							<div class="form-group">
 								<label>Name of Deputy Society/ಡೆಪ್ಯೂಟಿ ಸೊಸೈಟಿಯ ಹೆಸರ: </label> <span
