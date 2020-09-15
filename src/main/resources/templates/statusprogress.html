@@ -221,6 +221,7 @@ if ('serviceWorker' in navigator) {
    			htmlData += '<span> Please make sure you have proper internet connection and sufficient power/data suppy </span> </br>';
    			htmlData += '<span> On successful transaction of payment, you will be redirected back. </span> </br>';
    			htmlData += '<span> Please Press ok to proceed to payment, close otherwise </span> </br>';
+   			//htmlData += '<span style="color:red">(Note : Due to Internal Server Error Currently Net Banking , Wallet is Not Available - Please Pay Payment via Debit Card / UPI / QR Code )</span> ';
    			$("#successModalLabel").html(htmlData);
    		}else if(errorCode == '1') {
    			$("#messageTitle").html('Failed Transaction!!');
@@ -262,7 +263,7 @@ if ('serviceWorker' in navigator) {
     	    "description" : paymentDetails.description,
     	    "image" : "/img/logo1.jpg",
     	    "order_id" : paymentDetails.orderId,
-			"callback_url" : clbackUrl,
+			"callback_url" : "https://www.google.com/"+clbackUrl,
 			"redirect" : true,
     	    "prefill" : {
     	    	"name" : paymentDetails.amount, 
@@ -314,7 +315,7 @@ if ('serviceWorker' in navigator) {
     	    "description" : paymentDetails.description,
     	    "image" : "/img/logo1.jpg",
     	    "order_id" : paymentDetails.orderId,
-			"callback_url" : clbackUrl,
+			"callback_url" : "https://www.google.com/"+clbackUrl,
 			"redirect" : true,
     	    "prefill" : {
     	    	"name" : paymentDetails.amount, 
