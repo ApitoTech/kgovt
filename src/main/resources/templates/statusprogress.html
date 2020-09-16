@@ -255,7 +255,8 @@ if ('serviceWorker' in navigator) {
     }
     
     function makePayment1(paymentDetails) {
-    	let clbackUrl = "/pay/chargePayment1/"+paymentDetails.orderId+"/"+paymentDetails.applicantNumber+"/";
+	let hostURL = slashes.concat(window.location.hostname); 
+    	let clbackUrl = hostURL +"/pay/chargePayment1/"+paymentDetails.orderId+"/"+paymentDetails.applicantNumber+"/";
     	 var options = {
     	    "key" : paymentDetails.key,
     	    "amount":paymentDetails.amount, // Example: 2000 paise = INR 20
@@ -263,7 +264,7 @@ if ('serviceWorker' in navigator) {
     	    "description" : paymentDetails.description,
     	    "image" : "/img/logo1.jpg",
     	    "order_id" : paymentDetails.orderId,
-			"callback_url" : "https://www.google.com/"+clbackUrl,
+			"callback_url" : clbackUrl,
 			"redirect" : true,
     	    "prefill" : {
     	    	"name" : paymentDetails.amount, 
@@ -307,7 +308,8 @@ if ('serviceWorker' in navigator) {
     }
     
     function makePayment2(paymentDetails) {
-    	let clbackUrl = "/pay/chargePayment2/"+paymentDetails.orderId+"/"+paymentDetails.applicantNumber+"/";
+	let hostURL = slashes.concat(window.location.hostname); 
+    	let clbackUrl =  hostURL +"/pay/chargePayment2/"+paymentDetails.orderId+"/"+paymentDetails.applicantNumber+"/";
     	 var options = {
     	    "key" : paymentDetails.key,
     	    "amount":paymentDetails.amount, // Example: 2000 paise = INR 20
@@ -315,7 +317,7 @@ if ('serviceWorker' in navigator) {
     	    "description" : paymentDetails.description,
     	    "image" : "/img/logo1.jpg",
     	    "order_id" : paymentDetails.orderId,
-			"callback_url" : "https://www.google.com/"+clbackUrl,
+			"callback_url" : clbackUrl,
 			"redirect" : true,
     	    "prefill" : {
     	    	"name" : paymentDetails.amount, 
