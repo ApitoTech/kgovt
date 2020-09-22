@@ -28,20 +28,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.kgovt.models.AdminUsers;
 import com.kgovt.models.ApplicationDetailes;
 import com.kgovt.models.Status;
-import com.kgovt.services.AdminUsersService;
 import com.kgovt.services.ApplicationDetailesService;
 import com.kgovt.services.StatusService;
 import com.kgovt.utils.AppConstants;
 import com.kgovt.utils.AppUtilities;
 
 @Controller
-@RequestMapping("/admin")
-public class AdminController extends AppConstants {
+@RequestMapping("/master")
+public class MasterController extends AppConstants {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
-	
-	@Autowired
-	private AdminUsersService adminUsersService;
 	
 	@Autowired
 	private ApplicationDetailesService appicationService;
@@ -52,25 +48,23 @@ public class AdminController extends AppConstants {
 	@Autowired
     private ServletContext servletContext;
 	
-	@GetMapping("/applicationList")
-	public String applicationList() {
-		return "application_list";
+	@GetMapping("/masterList")
+	public String masterList() {
+		return "masterlist";
 	}
 	
-	
-	
 	@GetMapping("/")
-	public String adminHome() {
-		return "adminlogin";
+	public String masterHome() {
+		return "masterlogin";
 	}
 	
 	@GetMapping("/login")
-	public String adminLogin() {
-		return "adminlogin";
+	public String masterLogin() {
+		return "masterlogin";
 	}
 	
 	@GetMapping("/logout")
-	public String adminLogout() {
+	public String masterLogout() {
 		return "redirect:/login";
 	}
 	
@@ -81,7 +75,7 @@ public class AdminController extends AppConstants {
 			model.addAttribute("applicationDetailes", appDetails);
 		} catch (Exception e) {
 		}
-		return "applicationview";
+		return "masterview";
 	}
 	
 	@PostMapping(value = "/acceptViewData", produces = { MediaType.APPLICATION_JSON_VALUE }, consumes = {MediaType.APPLICATION_JSON_VALUE })
@@ -92,33 +86,22 @@ public class AdminController extends AppConstants {
 		returnData.put("TYPE", status);
 		try {
 			// update aap details
-			ApplicationDetailes appDetails = appicationService.findByApplicantNumber(applicantNo);
-			AdminUsers admin= adminUsersService.findByRegion(appDetails.getPreOfCenter());
-			appDetails.setApplicationStatus(status);
-			appicationService.saveApplicationDetailes(appDetails);
-			//update status
-			Status stat=statusService.findByApplicantNumber(applicantNo);
-			stat.setStatus(status);
-			stat.setComment(comment);
-			stat.setAdminId(admin.getRecordId());
-			statusService.saveStatus(stat);			
+//			ApplicationDetailes appDetails = appicationService.findByApplicantNumber(applicantNo);
+//			AdminUsers admin= adminUsersService.findByRegion(appDetails.getPreOfCenter());
+//			appDetails.setApplicationStatus(status);
+//			appicationService.saveApplicationDetailes(appDetails);
+//			//update status
+//			Status stat=statusService.findByApplicantNumber(applicantNo);
+//			stat.setStatus(status);
+//			stat.setComment(comment);
+//			stat.setAdminId(admin.getRecordId());
+//			statusService.saveStatus(stat);			
 		}catch(Exception e) {
 			returnData.put("ERROR", e);
 		}
 		return returnData;
 	}
 	
-	@GetMapping("/saveAdmin")
-	public String saveAdmin() {
-		AdminUsers admin =new AdminUsers();
-		admin.setPassword("admin123");
-		admin.setRegion("Dharwad");
-		admin.setRole("ROLE_ADMIN");
-		adminUsersService.saveAdmin(admin);
-		return "";
-	}
-	
-
 	@RequestMapping(value = "/download", method = RequestMethod.GET)
 	@ResponseBody
 	public  ResponseEntity<InputStreamResource>  downloadFile(@Param(value = "photoFile") String photoFile)throws IOException {
@@ -144,6 +127,16 @@ public class AdminController extends AppConstants {
 			return null;
 		}
 
+	}
+	
+	@GetMapping("/saveAdmin")
+	public String saveAdmin() {
+//		AdminUsers admin =new AdminUsers();
+//		admin.setPassword("admin123");
+//		admin.setRegion("Dharwad");
+//		admin.setRole("ROLE_ADMIN");
+//		adminUsersService.saveAdmin(admin);
+		return "";
 	}
 
 }

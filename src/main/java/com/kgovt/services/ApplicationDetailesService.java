@@ -359,6 +359,22 @@ public class ApplicationDetailesService extends AppConstants {
 
 		return new Page<>();
 	}
+	
+	public Page<ApplicationDetailes> getApplicationDetailess(PagingRequest pagingRequest) {
+		try {
+			List<ApplicationDetailes> applicationDetailess = new ArrayList<>();
+			applicationDetailess = applicationDetailesRepository.getAll();
+			if(null == applicationDetailess || applicationDetailess.isEmpty()) {
+				applicationDetailess = new ArrayList<>();
+			}
+			return getPage(applicationDetailess, pagingRequest);
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+
+		return new Page<>();
+	}
 
 	private Page<ApplicationDetailes> getPage(List<ApplicationDetailes> applicationDetailess,
 			PagingRequest pagingRequest) {

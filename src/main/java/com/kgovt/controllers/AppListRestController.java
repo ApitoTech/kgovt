@@ -34,6 +34,11 @@ public class AppListRestController {
 		return appicationService.getApplicationDetailess(pagingRequest,region, status);
 	}
 	
+	@PostMapping("/getAllApplicationData")
+	public Page<ApplicationDetailes> list(@RequestBody PagingRequest pagingRequest) {
+		return appicationService.getApplicationDetailess(pagingRequest);
+	}
+	
 	@PostMapping("/myWebhook")
 	  public void getMyJson(@RequestBody Map<String, Object> json) {
 	  System.out.println("WebHook collected JSON: " + json);

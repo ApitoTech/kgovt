@@ -26,5 +26,8 @@ public interface ApplicationDetailesRepository extends JpaRepository<Application
 
 	ApplicationDetailes findByMobile(Long mobile);
 	
+	@Query(value = "SELECT a from ApplicationDetailes a")
+	List<ApplicationDetailes> getAll();
+	
 	
 }

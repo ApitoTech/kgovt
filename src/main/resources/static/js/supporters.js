@@ -16,7 +16,7 @@ headerhtml += '				data-target="#navbarNav" aria-controls="navbarNav" ';
 headerhtml += '				aria-expanded="false" aria-label="Toggle navigation"> ';
 headerhtml += '				<span class="navbar-toggler-icon"></span>';
 headerhtml += '			</button>';
-headerhtml += '			<div class="collapse navbar-collapse" id="navbarNav">';
+headerhtml += '			<div class="collapse navbar-collapse show" id="navbarNav">';
 headerhtml += '				<ul class="navbar-nav">';
 headerhtml += '					<li class="nav-item"><a class="nav-link" href="/">Home';
 headerhtml += '							Page</a></li>';
