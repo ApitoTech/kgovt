@@ -343,7 +343,10 @@ public class ApplicationDetailesService extends AppConstants {
 			String applicationStatus) {
 		try {
 			List<ApplicationDetailes> applicationDetailess = new ArrayList<>();
-			if (AppUtilities.isNotNullAndNotEmpty(applicationStatus)) {
+			if(AppUtilities.isNotNullAndNotEmpty(region) && "All".equalsIgnoreCase(region)) {
+				applicationDetailess = applicationDetailesRepository.getAll();
+			}
+			else if (AppUtilities.isNotNullAndNotEmpty(applicationStatus)) {
 				applicationDetailess = applicationDetailesRepository.getByNames(region, applicationStatus);
 			} else {
 				applicationDetailess = applicationDetailesRepository.getByRegions(region);
