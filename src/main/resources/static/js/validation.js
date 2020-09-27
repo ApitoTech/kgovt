@@ -1,3 +1,10 @@
+$(window).on('load',function(){
+    $('#myModal').modal('show');
+    
+    console.log("pop");
+});
+
+
 $(function(){
 
 	$('#sslc_marks').change(function(){
