@@ -11,8 +11,8 @@
 	</parent>
 	<groupId>com.kgovt</groupId>
 	<artifactId>kgovt</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.0</version>
+	<packaging>war</packaging>
 	<name>kgovt</name>
 	<description>Application for Karnataka Govt</description>
 
